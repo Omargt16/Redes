@@ -76,7 +76,8 @@ void initDB()
         fprintf(stderr, "Could not init DB\n");
         return exit(0);
     }
-    if (mysql_real_connect(conn, "localhost", "omar", "Omardanielgt00#out", "arp", 0, NULL, 0) == NULL)
+    //change this line
+    if (mysql_real_connect(conn, "localhost", "name", "password", "database", 0, NULL, 0) == NULL)
     {
         fprintf(stderr, "DB Connection Error\n");
         return exit(0);
