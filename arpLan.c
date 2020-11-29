@@ -43,7 +43,7 @@ int main(void)
     char host[4];
     packet_socket = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));
     initDB();
-    queryDelete(); //remove content
+    queryDelete(); 
     if (packet_socket == -1)
     {
         perror("Could not open socket\n");
@@ -225,7 +225,6 @@ void queryInsert(unsigned char *plot)
     strcat(insertInCache, "','");
     strcat(insertInCache, mac);
     strcat(insertInCache, "');");
-    //printf("%s\n", insertInCache);
     if (mysql_query(conn, insertInCache) != 0)
     {
         fprintf(stderr, "Query Failure\n");
