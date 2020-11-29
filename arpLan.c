@@ -36,7 +36,10 @@ void queryInsert(unsigned char *);
 void queryDelete();
 void initDB();
 int validate(unsigned char *);
-
+//Before running code, create database to store the results 
+//CREATE DATABASE arp;
+//USE arp;
+//CREATE TABLE arpCache (ip VARCHAR(20), mac VARCHAR(20));
 int main(void)
 {
     int packet_socket;
@@ -76,8 +79,8 @@ void initDB()
         fprintf(stderr, "Could not init DB\n");
         return exit(0);
     }
-    //change this line
-    if (mysql_real_connect(conn, "localhost", "name", "password", "database", 0, NULL, 0) == NULL)
+    //Enter your credentials
+    if (mysql_real_connect(conn, "host", "user", "passwd", "arp", 0, NULL, 0) == NULL)
     {
         fprintf(stderr, "DB Connection Error\n");
         return exit(0);
