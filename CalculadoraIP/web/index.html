@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Calculadora IP</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Calculadora IP</h1>
+        <div class="row">
+            <div class="col-6">
+                <form name="ipForm" method="get" action="GetipInfo">
+                    <label for="ipAddress">Ingresa una dirección IP</label><br/>
+                    <input type="text" id="ipAddress" name="ipAddress"/><br/><br/>
+                    <label for="option">Elige un parámetro</label><br/>
+                    <select id="option" name="option">
+                      <option value="host">Host</option>
+                      <option value="subred">Subred</option>
+                      <option value="prefijo">Prefijo</option>
+                    </select><br/><br/>
+                    <label for="value">Ingresa el valor del parámetro</label><br/>
+                    <input type="number" id="value" name="value"/><br/><br/>
+                    <input type="submit" value="Siguiente" onclick="ValidateIPaddress(document.ip_form.ip_address)"/>
+                </form>  
+            </div>
+        </div>
+    </body>
+</html>
